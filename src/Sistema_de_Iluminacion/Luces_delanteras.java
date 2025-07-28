@@ -8,7 +8,7 @@ public class Luces_delanteras extends Metodo_de_Encendido {
 
     private Color  LucesAltas;
     private Color  LucesBajas;
-    private Color LucesDesactivadas;
+    private Color ColorActual;
     private boolean LucesAltasActivadas;
     
     
@@ -22,14 +22,14 @@ public class Luces_delanteras extends Metodo_de_Encendido {
     @Override
     public void apagado() {
         super.apagado(); 
-        this.LucesDesactivadas = Color.BLACK; 
+        this.ColorActual = Color.BLACK; 
         this.LucesAltasActivadas = false;
     }
 
     @Override
     public void encender() {
         super.encender(); 
-        this.LucesDesactivadas = LucesBajas;
+        this.ColorActual = LucesBajas;
         this.LucesAltasActivadas = false;
     }
 
@@ -41,16 +41,16 @@ public class Luces_delanteras extends Metodo_de_Encendido {
     public void CambioDelanteras (){
          if (super.isEncendido()) {
         this.LucesAltasActivadas = !this.LucesAltasActivadas;
-        this.LucesDesactivadas  = this.LucesAltasActivadas ? LucesAltas : LucesBajas;
+        this.ColorActual = this.LucesAltasActivadas ? LucesAltas : LucesBajas;
         }
     }
     
-    public boolean setLucesAltas() {
+    public boolean isLucesAltasActivadas() {
         return this.LucesAltasActivadas;
     }
     
     public Color getColorActual() {
-        return this.LucesDesactivadas;
+        return this.ColorActual;
     }
     
 }   
