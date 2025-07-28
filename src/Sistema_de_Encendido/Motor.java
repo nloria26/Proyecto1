@@ -7,38 +7,42 @@ import java.awt.Color;
 
 public class Motor extends Metodo_de_Encendido {
 
-    private static final Color LUZ_TABLERO= Color.YELLOW;
-    private static final Color LUZ_TAPAGADA= Color.GRAY;
+    private Color Tablero_Encendido;
+    private Color Tablero_Apagado;
 
-    public static Color getLuzTablero() {
-        return LUZ_TABLERO;
+    public Color getTablero_Encendido() {
+        return Tablero_Encendido;
+    }
+
+    public Color getTablero_Apagado() {
+        return Tablero_Apagado;
     }
 
     @Override
     public void apagado() {
-        super.apagado(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        super.apagado();
+        this.Tablero_Apagado = Color.BLACK;
     }
 
     @Override
     public void encender() {
-        super.encender(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        super.encender(); 
+        this.Tablero_Encendido = Color.YELLOW;
+        
     }
 
     @Override
     public boolean isEncendido() {
-        return super.isEncendido(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.isEncendido();
     }
-
     
-    
+    public Motor(Color Tablero_Encendido, Color Tablero_Apagado) {
+        this.Tablero_Encendido = Tablero_Encendido;
+        this.Tablero_Apagado = Tablero_Apagado;
+    }
     public Color getEstadoLuzTablero(){
-       return isEncendido() ? LUZ_TABLERO : LUZ_TAPAGADA; 
+       return isEncendido() ? Tablero_Encendido : Tablero_Apagado; 
     }
+    
+    
 }
-
-    
-    
-    
-    
-    
-
