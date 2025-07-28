@@ -15,9 +15,22 @@ public class Motor extends Metodo_de_Encendido {
     }
 
     @Override
+    public void apagado() {
+        super.apagado(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public void encender() {
+        super.encender(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
     public boolean isEncendido() {
-       return encendido;      
-    } 
+        return super.isEncendido(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    
+    
     public Color getEstadoLuzTablero(){
        return isEncendido() ? LUZ_TABLERO : LUZ_TAPAGADA; 
     }
