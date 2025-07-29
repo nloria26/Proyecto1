@@ -1,10 +1,10 @@
 
-package Sistema_de_Iluminacion;
+package SistemaIluminacion;
 
-import Metodo_de_Encendido.Metodo_de_Encendido;
+import MetodoEncendido.MetodoEncendido;
 import java.awt.Color;
 
-public class Luces_delanteras extends Metodo_de_Encendido {
+public class Luzdelanteras extends MetodoEncendido {
 
     private Color  LucesAltas;
     private Color  LucesBajas;
@@ -13,7 +13,7 @@ public class Luces_delanteras extends Metodo_de_Encendido {
     
     
     
-    public Luces_delanteras() {
+    public Luzdelanteras() {
         
         this.LucesBajas = Color.white;
         this.LucesAltas = Color.YELLOW;

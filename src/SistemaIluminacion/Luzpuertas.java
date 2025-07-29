@@ -1,10 +1,10 @@
 
-package Sistema_de_Iluminacion;
+package SistemaIluminacion;
 
-import Metodo_de_Encendido.Metodo_de_Encendido;
+import MetodoEncendido.MetodoEncendido;
 
 
-public class Luces_puertas extends Metodo_de_Encendido{
+public class Luzpuertas extends MetodoEncendido{
 
     @Override
     public void apagado() {

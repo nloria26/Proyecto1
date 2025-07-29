@@ -1,18 +1,18 @@
 
-package Sistema_de_Iluminacion;
+package SistemaIluminacion;
 
 import java.awt.Color;
 
 public class MergenciaIntermitente  {
     
-    private Intermitentes  intermitente;
-    private Intermitentes  apagada;
+    private Luz  intermitente;
+    private Luz  apagada;
     private boolean modoEmergencia;
 
     public MergenciaIntermitente () {
         
-        this.intermitente = new Intermitentes (Color.YELLOW, 1);
-        this.apagada = new Intermitentes (Color.BLACK, 0);     
+        this.intermitente = new Luz (Color.YELLOW, 1);
+        this.apagada = new Luz (Color.BLACK, 0);     
         this.modoEmergencia = false;
     }
     

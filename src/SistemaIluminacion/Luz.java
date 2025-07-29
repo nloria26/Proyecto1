@@ -1,10 +1,10 @@
 
-package Sistema_de_Iluminacion;
+package SistemaIluminacion;
 
-import Metodo_de_Encendido.Metodo_de_Encendido;
+import MetodoEncendido.MetodoEncendido;
 import java.awt.Color;
 
-public class Intermitentes extends Metodo_de_Encendido{
+public class Luz extends MetodoEncendido{
     
     private boolean encendido;
     private Color Amarillo;
@@ -38,7 +38,7 @@ public class Intermitentes extends Metodo_de_Encendido{
         return duracion;
     }
     
-    public Intermitentes(Color Amarrillo, int duracion) {
+    public Luz(Color Amarrillo, int duracion) {
         this.encendido = false;
         this.Amarillo = Color.YELLOW;
         this.duracion = duracion;

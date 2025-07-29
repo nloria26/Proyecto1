@@ -1,11 +1,11 @@
 
-package Sistema_de_Encendido;
+package SistemaEncendido;
 
-import Metodo_de_Encendido.Metodo_de_Encendido;
+import MetodoEncendido.MetodoEncendido;
 import java.awt.Color;
 
 
-public class Motor extends Metodo_de_Encendido {
+public class Motor extends MetodoEncendido {
 
     private Color Tablero_Encendido;
     private Color Tablero_Apagado;

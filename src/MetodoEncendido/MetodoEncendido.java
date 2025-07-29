@@ -1,7 +1,7 @@
 
-package Metodo_de_Encendido;
+package MetodoEncendido;
 
-public abstract class Metodo_de_Encendido{
+public abstract class MetodoEncendido{
     
      protected boolean encendido;
 

@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Sistema_Control_Puertas;
+package SistemaPuertas;
 
 /**
  *
  * @author Dylan
  */
 
-public class Sistema_Control_Puertas {
+public class SistemaPuertas {
 
     private boolean estadoPuerta;
 
@@ -19,7 +19,7 @@ public class Sistema_Control_Puertas {
     }
 
     //Constructor//
-    public Sistema_Control_Puertas(boolean estadoPuerta) {
+    public SistemaPuertas(boolean estadoPuerta) {
         this.estadoPuerta = false; /** La puerta inicia cerrada**/
     }
     
