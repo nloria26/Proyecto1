@@ -7,7 +7,7 @@ package SistemaAlarmaBloqueo;
  *
  * @author Dylan
  */
-import MetodoEncendido.MetodoEncendido;
+import Interfaces.MetodoEncendido;
 
 
 public class SistemaAlarmaBloqueo extends MetodoEncendido{

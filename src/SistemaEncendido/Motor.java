@@ -1,7 +1,7 @@
 
 package SistemaEncendido;
 
-import MetodoEncendido.MetodoEncendido;
+import Interfaces.MetodoEncendido;
 import java.awt.Color;
 
 

@@ -1,7 +1,7 @@
 
 package SistemaIluminacion;
 
-import MetodoEncendido.MetodoEncendido;
+import Interfaces.MetodoEncendido;
 import java.awt.Color;
 
 public class Luz extends MetodoEncendido{

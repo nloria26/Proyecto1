@@ -1,5 +1,5 @@
 
-package MetodoEncendido;
+package Interfaces;
 
 public abstract class MetodoEncendido{
     

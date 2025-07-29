@@ -1,7 +1,7 @@
 
 package SistemaIluminacion;
 
-import MetodoEncendido.MetodoEncendido;
+import Interfaces.MetodoEncendido;
 
 
 public class Luzpuertas extends MetodoEncendido{
