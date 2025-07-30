@@ -3,16 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package SistemaPuertas;
-
+import SistemaIluminacion.Luzpuertas;
+import Interfaces.MetodoEncendido;
 /**
  *
  * @author Dylan
  */
 
-public class SistemaPuertas {
+public class SistemaPuertas extends MetodoEncendido{
 
     private boolean estadoPuerta;
-    private boolean luzPuerta;
+    private Luzpuertas luzPuerta;
 
     //metodo GET//
     public boolean isEstadoPuerta() {
@@ -20,28 +21,29 @@ public class SistemaPuertas {
     }
 
     public boolean isLuzPuerta() {
-        return luzPuerta;
+        return luzPuerta.isEncendido();
     }
     
 
     //Constructor//
-    public SistemaPuertas(boolean estadoPuerta) {
+    public SistemaPuertas() {
         this.estadoPuerta = false; /** La puerta inicia cerrada y luz apagada**/
-        this.luzPuerta = false;
+        this.luzPuerta = new Luzpuertas();
+        this.luzPuerta.apagado();
     }
     
         //METODOS validación//
     public void abrir (){
      if (this.estadoPuerta==false) {
-    this.estadoPuerta=true;
-    this.luzPuerta=true;
+         this.estadoPuerta=true;
+         this.luzPuerta.encender();
         }
     }
     
     public void cerrar (){
      if (this.estadoPuerta==true) {
     this.estadoPuerta=false;
-    this.luzPuerta=false;
+    this.luzPuerta.apagado();
         }
     }    
 }
