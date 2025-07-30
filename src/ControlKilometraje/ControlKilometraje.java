@@ -6,6 +6,7 @@ package ControlKilometraje;
 
 
 import Interfaces.TiempoEncendido;
+import SistemaCombustible.TanqueCombustible;
 
 /**
  *
@@ -17,6 +18,7 @@ public class ControlKilometraje implements TiempoEncendido{
     private int velocimetro;
     private int segundo;
     private int minuto;
+    private TanqueCombustible tanque;
 
     public int getKm() {
         return km;
@@ -38,13 +40,19 @@ public class ControlKilometraje implements TiempoEncendido{
         return minuto;
     }
 
+    public TanqueCombustible getTanque() {
+        return tanque;
+    }
 
+
+    
     public ControlKilometraje(int km) {
         this.km = km;
         this.rpm = 800;
         this.velocimetro = 0;
         this.segundo = 0;
         this.minuto = 0;
+        this.tanque = new TanqueCombustible(capacidadTanque, consumoPorKm);
     }
     
 
@@ -63,8 +71,9 @@ public class ControlKilometraje implements TiempoEncendido{
     @Override
     public void contador() {
         /**cada minuto aumenta 1 a la variable kilometro**/
-        if(segundo == 0 && minuto > 0){
+        if(segundo == 0 && minuto > 0 && !tanque.estaVacio()){
             km++;
+            tanque.consumirUnKm();
         }
     }
     
