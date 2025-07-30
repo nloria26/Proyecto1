@@ -3,34 +3,34 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package SistemaAlarmaBloqueo;
+
+import Interfaces.Encendido;
+
 /**
  *
  * @author Dylan
  */
-import Interfaces.MetodoEncendido;
 
 
-public class SistemaAlarmaBloqueo extends MetodoEncendido{
+public class SistemaAlarmaBloqueo implements Encendido{
     
     private boolean bloqueoAlarma;
 
     public boolean isBloqueoAlarma() {
         return bloqueoAlarma;
     }
-    //constructor de MetodoEncendido. Si empieza true=puertas bloqueada y alarma encendida inicialmente.
-    public SistemaAlarmaBloqueo() {
-        super();
-        this.bloqueoAlarma = false; //false es alarma apagada y puerta desbloqueada al inicio
+
+    public SistemaAlarmaBloqueo(){
+        this.bloqueoAlarma = false;
     }
-    
+
     @Override
-    public void encender(){
-        super.encender();
-            this.bloqueoAlarma=true;
+    public void encender() {
+        this.bloqueoAlarma=true;
     }
-    
+
+    @Override
     public void apagar(){
-        super.apagado();
             this.bloqueoAlarma=false;
         }     
 }
