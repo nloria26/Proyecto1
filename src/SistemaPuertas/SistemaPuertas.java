@@ -12,27 +12,36 @@ package SistemaPuertas;
 public class SistemaPuertas {
 
     private boolean estadoPuerta;
+    private boolean luzPuerta;
 
     //metodo GET//
     public boolean isEstadoPuerta() {
         return estadoPuerta;
     }
 
+    public boolean isLuzPuerta() {
+        return luzPuerta;
+    }
+    
+
     //Constructor//
     public SistemaPuertas(boolean estadoPuerta) {
-        this.estadoPuerta = false; /** La puerta inicia cerrada**/
+        this.estadoPuerta = false; /** La puerta inicia cerrada y luz apagada**/
+        this.luzPuerta = false;
     }
     
         //METODOS validación//
     public void abrir (){
      if (this.estadoPuerta==false) {
     this.estadoPuerta=true;
+    this.luzPuerta=true;
         }
     }
     
     public void cerrar (){
      if (this.estadoPuerta==true) {
     this.estadoPuerta=false;
+    this.luzPuerta=false;
         }
     }    
 }
