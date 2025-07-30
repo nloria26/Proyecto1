@@ -46,7 +46,7 @@ public class ControlKilometraje implements TiempoEncendido{
 
 
     
-    public ControlKilometraje(int km) {
+    public ControlKilometraje(int km,int capacidadTanque,int consumoPorKm) {
         this.km = km;
         this.rpm = 800;
         this.velocimetro = 0;
