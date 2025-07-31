@@ -13,6 +13,10 @@ public class Luz implements Encendido{
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
+
+    public boolean isEncendido() {
+        return encendido;
+    }
     
     public Color getAmarillo() {
         return Amarillo;
