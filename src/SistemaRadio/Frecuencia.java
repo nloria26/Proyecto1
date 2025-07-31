@@ -40,4 +40,6 @@ public class Frecuencia {
     System.out.println ("Estatica");
 }
     }
+        
+        
 }
