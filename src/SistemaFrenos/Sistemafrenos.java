@@ -50,5 +50,17 @@ public class Sistemafrenos {
         return alarmaActiva;
     }
 
+    public boolean isFrenoMano() {
+        return frenoMano;
+    }
+
+    public boolean isObstaculoAtras() {
+        return obstaculoAtras;
+    }
+
+    public String getRazon() {
+        return Razon;
+    }
+
 }
 

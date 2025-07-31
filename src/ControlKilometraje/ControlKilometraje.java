@@ -4,7 +4,7 @@
  */
 package ControlKilometraje;
 
-
+import SistemaFrenos.Sistemafrenos;
 import Interfaces.TiempoEncendido;
 import SistemaCombustible.TanqueCombustible;
 
@@ -19,6 +19,8 @@ public class ControlKilometraje implements TiempoEncendido{
     private int segundo;
     private int minuto;
     private TanqueCombustible tanque;
+    private boolean Enmovimiento;
+    private Sistemafrenos frenoMano;
 
     public int getKm() {
         return km;
@@ -44,14 +46,20 @@ public class ControlKilometraje implements TiempoEncendido{
         return tanque;
     }
 
+    public boolean isEnmovimiento() {
+        return Enmovimiento;
+    }
+
 
     
-    public ControlKilometraje(int km,int capacidadTanque,int consumoPorKm) {
+    public ControlKilometraje(int km,int capacidadTanque,int consumoPorKm, Sistemafrenos frenoMano) {
         this.km = km;
         this.rpm = 800;
         this.velocimetro = 0;
         this.segundo = 0;
         this.minuto = 0;
+        this.Enmovimiento=false;
+        this.frenoMano=frenoMano;
         this.tanque = new TanqueCombustible(capacidadTanque, consumoPorKm);
     }
     
@@ -71,14 +79,14 @@ public class ControlKilometraje implements TiempoEncendido{
     @Override
     public void contador() {
         /**cada minuto aumenta 1 a la variable kilometro**/
-        if(segundo == 0 && minuto > 0 && !tanque.estaVacio()){
+        if(segundo == 0 && minuto > 0 && !tanque.estaVacio() && !Enmovimiento){
             km++;
             tanque.consumirUnKm();
         }
     }
     
     public void velocimetro() {
-    if (minuto > 0) {
+    if (minuto > 0 && Enmovimiento==true) {
         velocimetro = (km * 60) / minuto;
     } else {
         velocimetro = 0; // se evita división por cero
@@ -87,11 +95,20 @@ public class ControlKilometraje implements TiempoEncendido{
     
     public void contandoRPM() {
     /**cada minuto aumenta 1 a la variable kilometro**/
-    if(segundo == 0 && minuto > 0){
+    if(segundo == 0 && minuto > 0 && Enmovimiento==true){
         rpm+=800;
         }
     }
-    
+        public void iniciarMovimiento() {
+        if (!tanque.estaVacio()) {
+            Enmovimiento = true;
+        }
+    }
+        
+         public void detenerMovimiento() {
+        Enmovimiento = false;
+    }
+}   
     /** Metodos en gui o main:
      *control.tiempoEncendido();  // actualiza tiempo
      *control.contador();         // actualiza km (u otras variables)
@@ -101,4 +118,4 @@ public class ControlKilometraje implements TiempoEncendido{
     
     
     
-}
+
