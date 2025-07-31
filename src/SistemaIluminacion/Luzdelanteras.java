@@ -1,10 +1,10 @@
 
 package SistemaIluminacion;
 
-import Interfaces.MetodoEncendido;
+import Interfaces.Encendido;
 import java.awt.Color;
 
-public class Luzdelanteras extends MetodoEncendido {
+public class Luzdelanteras implements Encendido {
 
     private Color  LucesAltas;
     private Color  LucesBajas;
@@ -18,32 +18,25 @@ public class Luzdelanteras extends MetodoEncendido {
         this.LucesAltas = Color.YELLOW;
     }
     
+    
     @Override
-    public void apagado() {
-        super.apagado(); 
+    public void apagar() {
         this.ColorActual = Color.BLACK; 
-        this.LucesAltasActivadas = false;
+        this.LucesAltasActivadas = false;  
     }
+    
 
     @Override
     public void encender() {
-        super.encender(); 
         this.ColorActual = LucesBajas;
         this.LucesAltasActivadas = false;
     }
-
-    @Override
-    public boolean isEncendido() {
-        return super.isEncendido(); 
+   
+    public void CambioDelanteras() {
+    this.LucesAltasActivadas = !this.LucesAltasActivadas; 
+    this.ColorActual = this.LucesAltasActivadas ? LucesAltas : LucesBajas;
+        
     }
-    
-    public void CambioDelanteras (){
-         if (super.isEncendido()) {
-        this.LucesAltasActivadas = !this.LucesAltasActivadas;
-        this.ColorActual = this.LucesAltasActivadas ? LucesAltas : LucesBajas;
-        }
-    }
-    
     public boolean isLucesAltasActivadas() {
         return this.LucesAltasActivadas;
     }
@@ -51,6 +44,7 @@ public class Luzdelanteras extends MetodoEncendido {
     public Color getColorActual() {
         return this.ColorActual;
     }
+
     
 }   
     

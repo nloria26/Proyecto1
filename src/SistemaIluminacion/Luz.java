@@ -1,10 +1,10 @@
 
 package SistemaIluminacion;
 
-import Interfaces.MetodoEncendido;
+import Interfaces.Encendido;
 import java.awt.Color;
 
-public class Luz extends MetodoEncendido{
+public class Luz implements Encendido{
     
     private boolean encendido;
     private Color Amarillo;
@@ -13,23 +13,7 @@ public class Luz extends MetodoEncendido{
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
-
-    @Override
-    public void apagado() {
-        super.apagado();
-    }
-
-    @Override
-    public void encender() {
-        super.encender();
-    }
-
-    @Override
-    public boolean isEncendido() {
-        return super.isEncendido();     }
-
     
-
     public Color getAmarillo() {
         return Amarillo;
     }
@@ -42,6 +26,17 @@ public class Luz extends MetodoEncendido{
         this.encendido = false;
         this.Amarillo = Color.YELLOW;
         this.duracion = duracion;
+    }
+
+    @Override
+    public void encender() {
+        this.encendido = true;
+    }
+
+    @Override
+    public void apagar() {
+        this.encendido = false;
+        
     }
     
     
