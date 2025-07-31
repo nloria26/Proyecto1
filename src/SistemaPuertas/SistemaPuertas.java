@@ -45,16 +45,3 @@ public class SistemaPuertas{
     }  
     //----------------------------------
 }
-
-/** COPIAR A CLASE MAIN
- * 
- * 
- private SistemaPuertas puertaPiloto;
- private SistemaPuertas puertaCopiloto;
- * 
- * 
- public [CLASE MAIN O VEHICULO]() {
-   this.puertaPiloto = NEW SistemaPuertas();
-   this.puertaCopiloto = NEW SistemaPuertas();
-    }
- **/
