@@ -40,4 +40,5 @@ public class Motor implements Encendido {
         this.motor = false;
         this.estadoTablero = Color.BLACK;
     }  
+    
 }

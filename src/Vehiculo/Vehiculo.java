@@ -53,6 +53,33 @@ public class Vehiculo {
         return motor;
     }
 
+    public SistemaAlarmaBloqueo getSistemaAlarmaBloqueo() {
+        return sistemaAlarmaBloqueo;
+    }
+
+    public SistemaClimatizacion getSistemaClimatizacion() {
+        return sistemaClimatizacion;
+    }
+
+    public Sistemafrenos getSistemaFrenos() {
+        return sistemaFrenos;
+    }
+
+    public LimpiaParabrisas getLimpiaParabrisas() {
+        return limpiaParabrisas;
+    }
+
+    public MergenciaIntermitente getLuzEmergencia() {
+        return luzEmergencia;
+    }
+
+    public Luz getLuzInterior() {
+        return luzInterior;
+    }
+
+    
+    
+    
     public SistemaPuertas getPuertaPiloto() {
         return puertaPiloto;
     }
@@ -71,6 +98,9 @@ public class Vehiculo {
 
     public Ocupante getOcupante() {
         return ocupante;
+    }
+     public TanqueCombustible getTanqueCombustible() {
+        return tanqueCombustible;
     }
 }
 

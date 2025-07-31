@@ -9,7 +9,7 @@ package SistemaFrenos;
  * @author UTN-GIU
  */
 public class Sistemafrenos {
- private boolean frenoMano;     
+    private boolean frenoMano;     
     private boolean obstaculoAtras; 
     private boolean alarmaActiva;
     private String Razon;
