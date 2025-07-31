@@ -37,6 +37,10 @@ private Vehiculo vehiculo;
         lblMotor.setText("Motor:"+(vehiculo.getMotor().isMotor()));
         lblcombustible.setText("Combustible"+vehiculo.getTanqueCombustible().getNivel()+"L");
         lblFreno.setText("Frenos"+vehiculo.getSistemaFrenos().isFrenoMano());
+        Vel.setText("Velocidad:"+vehiculo.getControlKilo().getVelocimetro());
+lblPuerta.setText("La puerta esta:"+vehiculo.getPuertaPiloto().isEstadoPuerta());
+lblLuzPuerta.setText("La Luz de puerta esta:"+vehiculo.getPuertaPiloto().isLuzPuerta());
+lblSeguroPuerta.setText("El seguro esta:"+vehiculo.getSistemaAlarmaBloqueo().isBloqueoAlarma());
         //lblLuzDelantera.setText("Luz delantera:"+.¿vehiculo.getLuzDelanteras());
         //lblRadio.setText("Usted esta escuchandoAM:"+vehiculo.getRadio().mostrarEmisoraAM());
         //lblRadioFM.setText("Usted esta escuchandoFM:"+vehiculo.getRadio().mostrarEmisoraFM());
@@ -51,29 +55,27 @@ private Vehiculo vehiculo;
     private void initComponents() {
 
         lblcombustible = new javax.swing.JLabel();
-        lblvelocidad = new javax.swing.JLabel();
         lblMotor = new javax.swing.JLabel();
         lblFreno = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
-        lblRadio = new javax.swing.JLabel();
-        lblRadioFM = new javax.swing.JLabel();
         lblRecargaCombustible = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         lblLuzDelantera = new javax.swing.JLabel();
         lblLimpiaPara = new javax.swing.JButton();
+        KMP = new javax.swing.JLabel();
+        KM = new javax.swing.JLabel();
+        Vel = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        lblPuerta = new javax.swing.JLabel();
+        lblBloqueoPuerta = new javax.swing.JButton();
+        lblLuzPuerta = new javax.swing.JLabel();
+        lblSeguroPuerta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblcombustible.setText("jLabel1");
-
-        lblvelocidad.setText("jLabel2");
 
         lblMotor.setText("jLabel3");
 
@@ -122,8 +124,6 @@ private Vehiculo vehiculo;
             }
         });
 
-        lblRadioFM.setText("jLabel1");
-
         lblRecargaCombustible.setText("Recargar combustible");
         lblRecargaCombustible.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,37 +131,36 @@ private Vehiculo vehiculo;
             }
         });
 
-        jButton4.setText("jButton4");
-
-        jButton5.setText("jButton5");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        lblLimpiaPara.setText("Control LimpiaParabrizas");
+        lblLimpiaPara.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                lblLimpiaParaActionPerformed(evt);
             }
         });
 
-        jButton6.setText("jButton6");
+        KMP.setText("Kilometraje:");
+
+        KM.setText("Kilometros recorridos:");
+
+        Vel.setText("Velocidad");
+
+        jButton6.setText("Abrir/cerrar puerta");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jButton7.setText("jButton7");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        lblPuerta.setText("jLabel1");
+
+        lblBloqueoPuerta.setText("Bloquear Puerta");
+        lblBloqueoPuerta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                lblBloqueoPuertaActionPerformed(evt);
             }
         });
 
-        lblLimpiaPara.setText("jButton8");
-        lblLimpiaPara.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lblLimpiaParaActionPerformed(evt);
-            }
-        });
+        lblSeguroPuerta.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -171,106 +170,96 @@ private Vehiculo vehiculo;
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblRadioFM, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(94, 94, 94)
-                                .addComponent(lblLuzDelantera, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(458, 458, 458)))
-                        .addGap(48, 48, 48))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblFreno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblMotor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(89, 89, 89)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                        .addComponent(lblcombustible, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82)
+                        .addComponent(lblRecargaCombustible, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblvelocidad))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblLimpiaPara)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton3)
-                                        .addGap(28, 28, 28)
-                                        .addComponent(lblcombustible)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblRecargaCombustible, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                                .addGap(622, 622, 622)
+                                .addComponent(lblLuzDelantera, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(158, 158, 158)
+                                .addComponent(lblSeguroPuerta, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblMotor, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(220, 220, 220)
+                                .addComponent(KMP, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(KM, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Vel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jButton6)))
+                .addComponent(lblFreno, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblLimpiaPara, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblBloqueoPuerta, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblPuerta, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLuzPuerta, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1))
+                                .addContainerGap()
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblcombustible)
-                                    .addComponent(lblRecargaCombustible))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
-                .addGap(15, 15, 15)
-                .addComponent(lblMotor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2)))
+                        .addGap(18, 18, 18)
+                        .addComponent(lblMotor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblRecargaCombustible)
+                            .addComponent(lblcombustible))
+                        .addGap(53, 53, 53)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(KMP, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(KM)
+                            .addComponent(Vel))))
+                .addGap(21, 21, 21)
+                .addComponent(lblFreno, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblLimpiaPara)
-                        .addGap(33, 33, 33)
-                        .addComponent(lblLuzDelantera, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblSeguroPuerta, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblFreno, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4))
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblBloqueoPuerta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPuerta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblLuzPuerta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton6)
-                        .addGap(29, 29, 29)
-                        .addComponent(lblRadioFM, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblLimpiaPara, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(lblvelocidad))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7)))
-                .addGap(13, 13, 13))
+                        .addComponent(lblLuzDelantera, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(92, 92, 92))))
         );
 
         pack();
@@ -301,7 +290,7 @@ private Vehiculo vehiculo;
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-      if(vehiculo.getSistemaFrenos().isFrenoMano()==!true){
+      if(vehiculo.getSistemaFrenos().isFrenoMano()==!true && vehiculo.getMotor().isMotor()==true){
           vehiculo.getTanqueCombustible().consumirUnKm();
       }
       actualizarDatos();
@@ -318,21 +307,6 @@ private Vehiculo vehiculo;
         vehiculo.getTanqueCombustible().recargar(5);
     }//GEN-LAST:event_lblRecargaCombustibleActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        vehiculo.getLuzDelanteras().encender();
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       vehiculo.getLuzDelanteras().apagar(); 
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void lblLimpiaParaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblLimpiaParaActionPerformed
            Velocidades[] opciones = Velocidades.values();
 
@@ -348,13 +322,52 @@ private Vehiculo vehiculo;
 
     if (seleccion != null) {
         vehiculo.getLimpiaParabrisas().setVelocidadActual(seleccion);
-        lblLimpiaPara.setText("Limpia: " + seleccion);
+        lblLimpiaPara.setText("Velocidad del LimpiParabrizas: " + seleccion);
     }
 
-        
-        
+    }
+    
+    private void mostrarAlarma(String mensaje) {
+    // Crear un JDialog modal (bloquea hasta que el usuario actúe)
+    JDialog dialogo = new JDialog(this, "Alarma", true);
+    dialogo.setLayout(new BorderLayout());
+
+    // Mensaje de advertencia
+    JLabel lblMensaje = new JLabel(mensaje, SwingConstants.CENTER);
+    lblMensaje.setFont(new Font("Arial", Font.BOLD, 16));
+    lblMensaje.setForeground(Color.RED);
+
+    // Botón de acción del usuario
+    JButton btnAceptar = new JButton("Resolver");
+    btnAceptar.addActionListener(e -> {
+        // Aquí puedes poner la acción "correcta"
+        // Por ejemplo: encender motor, quitar freno, etc.
+        dialogo.dispose(); // Cierra la alarma
+    });
         
     }//GEN-LAST:event_lblLimpiaParaActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        
+         if (vehiculo.getPuertaPiloto().isEstadoPuerta()==true) {
+             
+        vehiculo.getPuertaPiloto().cerrar();
+    } else if (vehiculo.getSistemaAlarmaBloqueo().isBloqueoAlarma()==!true){
+    
+        vehiculo.getPuertaPiloto().abrir();
+         }
+    
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void lblBloqueoPuertaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblBloqueoPuertaActionPerformed
+        // TODO add your handling code here:
+          if (vehiculo.getSistemaAlarmaBloqueo().isBloqueoAlarma()==true) {
+        vehiculo.getSistemaAlarmaBloqueo().apagar();
+    } else {
+        vehiculo.getSistemaAlarmaBloqueo().encender();
+    }
+    }//GEN-LAST:event_lblBloqueoPuertaActionPerformed
 
     private void ApagarMotor(){
         vehiculo.getMotor().apagar();
@@ -409,23 +422,23 @@ private Vehiculo vehiculo;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel KM;
+    private javax.swing.JLabel KMP;
+    private javax.swing.JLabel Vel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JButton lblBloqueoPuerta;
     private javax.swing.JLabel lblFreno;
     private javax.swing.JButton lblLimpiaPara;
     private javax.swing.JLabel lblLuzDelantera;
+    private javax.swing.JLabel lblLuzPuerta;
     private javax.swing.JLabel lblMotor;
-    private javax.swing.JLabel lblRadio;
-    private javax.swing.JLabel lblRadioFM;
+    private javax.swing.JLabel lblPuerta;
     private javax.swing.JButton lblRecargaCombustible;
+    private javax.swing.JLabel lblSeguroPuerta;
     private javax.swing.JLabel lblcombustible;
-    private javax.swing.JLabel lblvelocidad;
     // End of variables declaration//GEN-END:variables
 }

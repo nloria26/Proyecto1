@@ -33,4 +33,6 @@ public class SistemaAlarmaBloqueo implements Encendido{
     public void apagar(){
             this.bloqueoAlarma=false;
         }     
+    
+    
 }
