@@ -7,33 +7,37 @@ import java.awt.Color;
 
 public class Motor implements Encendido {
 
-    private Color Tablero_Encendido;
-    private Color Tablero_Apagado;
+    private Color estadoTablero;
+    private boolean motor;
 
-    public Color getTablero_Encendido() {
-        return Tablero_Encendido;
+    public boolean isMotor() {
+        return motor;
     }
 
-    public Color getTablero_Apagado() {
-        return Tablero_Apagado;
+    public Color getEstadoTablero() {
+        return estadoTablero;
     }
 
 
     @Override
     public void encender() { 
-        this.Tablero_Encendido = Color.YELLOW;   
+        if (this.motor==false) {
+         this.motor=true;
+         this.estadoTablero = Color.YELLOW;
+        }
     }
     
     
     @Override
     public void apagar() {
-        this.Tablero_Apagado = Color.BLACK;
-    }
-    
-    public Motor(Color Tablero_Encendido, Color Tablero_Apagado) {
-        this.Tablero_Encendido = Tablero_Encendido;
-        this.Tablero_Apagado = Tablero_Apagado;
+        if (this.motor==true) {
+         this.motor=false;
+         this.estadoTablero = Color.BLACK;        
+        }
     }
 
-    
+    public Motor() {
+        this.motor = false;
+        this.estadoTablero = Color.BLACK;
+    }  
 }

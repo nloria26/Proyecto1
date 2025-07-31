@@ -3,17 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package SistemaPuertas;
-import SistemaIluminacion.Luzpuertas;
-import Interfaces.MetodoEncendido;
+
 /**
  *
  * @author Dylan
  */
 
-public class SistemaPuertas extends MetodoEncendido{
+public class SistemaPuertas{
 
     private boolean estadoPuerta;
-    private Luzpuertas luzPuerta;
+    private boolean luzPuerta;
 
     //metodo GET//
     public boolean isEstadoPuerta() {
@@ -21,42 +20,41 @@ public class SistemaPuertas extends MetodoEncendido{
     }
 
     public boolean isLuzPuerta() {
-        return luzPuerta.isEncendido();
+        return luzPuerta;
     }
-    
-
+//------------------------------------
     //Constructor//
     public SistemaPuertas() {
         this.estadoPuerta = false; /** La puerta inicia cerrada y luz apagada**/
-        this.luzPuerta = new Luzpuertas();
-        this.luzPuerta.apagado();
+        this.luzPuerta = false;
     }
-    
-        //METODOS validación//
+ //-----------------------------------   
+        //METODOS//
     public void abrir (){
      if (this.estadoPuerta==false) {
          this.estadoPuerta=true;
-         this.luzPuerta.encender();
+         this.luzPuerta = true;
         }
     }
     
     public void cerrar (){
      if (this.estadoPuerta==true) {
     this.estadoPuerta=false;
-    this.luzPuerta.apagado();
+    this.luzPuerta = false;
         }
-    }    
+    }  
+    //----------------------------------
 }
 
 /** COPIAR A CLASE MAIN
  * 
  * 
- private Sistema_Control_Puertas puertaPiloto;
- private Sistema_Control_Puertas puertaCopiloto;
+ private SistemaPuertas puertaPiloto;
+ private SistemaPuertas puertaCopiloto;
  * 
  * 
  public [CLASE MAIN O VEHICULO]() {
-   this.puertaPiloto = NEW Sistema_Control_Puertas();
-   this.puertaCopiloto = NEW Sistema_Control_Puertas();
+   this.puertaPiloto = NEW SistemaPuertas();
+   this.puertaCopiloto = NEW SistemaPuertas();
     }
  **/
